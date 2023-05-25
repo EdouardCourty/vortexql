@@ -1,0 +1,17 @@
+version: '3.6'
+
+services:
+  mysql:
+    image: mysql:5.7.42
+    container_name: 'vortexsql_database'
+    ports:
+      - target: 3306
+        published: 3315
+        protocol: tcp
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: main_dev
+
+networks:
+  default:
+    name: 'vortexsql_network'

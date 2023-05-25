@@ -1,0 +1,4 @@
+.vortex
+migrations
+node_modules
+vortexconfig.json
