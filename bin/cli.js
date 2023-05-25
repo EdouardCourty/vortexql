@@ -1,3 +1,5 @@
+#!/usr/bin/env node
+
 import { Argument, Option, program } from 'commander';
 
 import Vortex from '../src/Vortex.js';
