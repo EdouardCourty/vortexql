@@ -11,12 +11,9 @@ program
 
 program
     .command('migrate')
-    .addOption(new Option('--no-interaction', 'Will automatically reply to any prompt by the default value (yes).'))
     .description('Migrates the database to the newest migration.')
-    .action(async ({ interaction }) => {
+    .action(async () => {
         Vortex.init();
-
-        Vortex.setInteraction(interaction);
 
         await Vortex.migrate();
         Vortex.finish();
