@@ -1,6 +1,6 @@
 {
   "name": "vortexql",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "An SQL migration tool for Node.JS",
   "main": "main.js",
   "scripts": {
