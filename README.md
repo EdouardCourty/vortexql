@@ -4,7 +4,7 @@ VortexQL has been designed to be the perfect tool when it comes to SQL migration
 
 [![npm version](https://img.shields.io/npm/v/vortexql.svg)](https://www.npmjs.com/package/vortexql)
 [![Downloads](https://img.shields.io/npm/dm/vortexql.svg)](https://www.npmjs.com/package/vortexql)
-
+[![Lint](https://github.com/EdouardCourty/vortexql/actions/workflows/lint.yml/badge.svg)](https://github.com/EdouardCourty/vortexql/actions/workflows/lint.yml)
 
 ## Table of contents
 
