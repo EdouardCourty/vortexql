@@ -2,9 +2,12 @@
   "name": "vortexql",
   "version": "1.0.0",
   "description": "An SQL migration tool for Node.JS",
-  "main": "index.js",
+  "main": "main.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "engines": {
+    "node": ">=14.21.3"
   },
   "type": "module",
   "bin": {
@@ -15,13 +18,10 @@
     "url": "git+https://github.com/EdouardCourty/vortexql.git"
   },
   "keywords": [
-    "migration",
     "sql",
     "migration",
     "migrate",
-    "node",
-    "sql",
-    "migrate"
+    "node"
   ],
   "author": {
     "name": "Edouard Courty",
@@ -35,6 +35,7 @@
   "homepage": "https://github.com/EdouardCourty/vortexql#readme",
   "dependencies": {
     "commander": "^10.0.1",
+    "inquirer": "^9.2.6",
     "mysql2": "^3.3.2"
   },
   "devDependencies": {

@@ -66,8 +66,8 @@ export default class {
         }
 
         const end = Date.now();
-        const seconds = (end - start) / 1000;
+        const milliseconds = end - start;
 
-        console.log(`Migrated in ${seconds.toFixed(2)} seconds.`);
+        console.log(`Migrated in ${milliseconds} ms.\n`);
     }
 }

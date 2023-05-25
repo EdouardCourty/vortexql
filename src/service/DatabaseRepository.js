@@ -14,7 +14,16 @@ export default class {
      * @param { Migration } migration
      */
     storeMigration(migration) {
-        const query = `INSERT INTO migrations_history (version, migrated_at) VALUES (${migration.getVersion()}, ${Math.round(Date.now() / 1000)})`;
+        const query = `INSERT INTO migrations_history (version, migrated_at) VALUES (${migration.getVersion()}, ${Date.now()})`;
+
+        Database.executeQuery(query);
+    }
+
+    /**
+     * @param { Migration } migration
+     */
+    removeMigration(migration) {
+        const query = `DELETE FROM migrations_history WHERE version = ${migration.getVersion()}`;
 
         Database.executeQuery(query);
     }

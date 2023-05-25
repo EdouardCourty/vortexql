@@ -57,12 +57,19 @@ export default class {
                     version: versionId,
                     path: folderPath + '/' + file
                 }
+            })
+            .sort((elem1, elem2) => {
+                return parseInt(elem1.version) < parseInt(elem2.version) ? 1 : -1;
             });
 
         const migrations = [];
 
         for (let { version, path } of migrationsPaths) {
             const instance = new (await import(path)).default(version);
+
+            if (!instance['up'] || !instance['down']) {
+                throw new Error(`Migration ${version} is invalid, up() and down() methods need to exist in the exported class.`);
+            }
 
             migrations.push(instance);
         }
@@ -88,12 +95,23 @@ export default class {
     storeMigration(migration) {
         const historyItem = {
             version: migration.getVersion(),
-            migrated_at: Math.round(Date.now() / 1000),
+            migrated_at: Date.now(),
         }
 
         const currentHistory = this.getHistory();
         currentHistory.push(historyItem);
 
         this.rewriteHistory(currentHistory);
+    }
+
+    /**
+     * @param { Migration } migration
+     */
+    removeMigration(migration) {
+        const currentHistory = this.getHistory();
+
+        this.rewriteHistory(currentHistory.filter((historyEntry) => {
+            return historyEntry.version !== migration.getVersion();
+        }));
     }
 }

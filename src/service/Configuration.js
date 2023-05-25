@@ -5,6 +5,20 @@ export default class {
         return process.cwd();
     }
 
+    static getDefaultConfig() {
+        return {
+            "database": {
+                "port": 3306,
+                "host": "localhost",
+                "user": "root",
+                "password": "root",
+                "database": "main_dev"
+            },
+            "migrationsLocation": "./migrations",
+            "migrationsHistorySavingStrategy": "database"
+        };
+    }
+
     static getConfiguration() {
         const config = JSON.parse(fs.readFileSync(this.getMainFolderLocation() + '/vortexconfig.json').toString());
         this.validateConfiguration(config);

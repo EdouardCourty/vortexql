@@ -6,6 +6,10 @@ export default class {
         this.#version = version;
     }
 
+    getDescription() {
+        return '';
+    }
+
     /**
      * @param {string} query
      */
