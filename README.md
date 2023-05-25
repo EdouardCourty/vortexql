@@ -1,4 +1,4 @@
-# VortexQL - SQL Migrations
+# VortexQL - SQL Migrations the right way
 
 VortexQL has been designed to be the perfect tool when it comes to SQL migrations.  
 
