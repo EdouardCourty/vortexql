@@ -84,7 +84,7 @@ Options:
 
 Commands:
   migrate                     Migrates the database to the newest migration.
-  create                      Creates a new migration
+  create [options]            Creates a new migration. [--mjs] option to use '.mjs' file extension.
   revert [options] <version>  Reverts the database to the given migration ID's state
   list                        Shows a list of the migrations (played or not) and their description.
   init                        Creates a default configuration file.
