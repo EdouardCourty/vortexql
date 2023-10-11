@@ -161,13 +161,14 @@ Are you sure?`;
         }
     }
 
-    static createNew() {
+    static createNew(isMjs = false) {
         const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
         const template = path.join(__dirname + '/../data/migration.template.js');
         const content = fs.readFileSync(template).toString();
+        const fileExt = isMjs ? '.mjs' : '.js';
 
-        const newMigrationFileName = Date.now() + '.js';
+        const newMigrationFileName = Date.now() + fileExt;
         const migrationFilePath = path.join(FileSystemRepository.getMigrationFolderPath(), '/' + newMigrationFileName);
 
         fs.writeFileSync(migrationFilePath, content);
