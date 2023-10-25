@@ -49,7 +49,7 @@ export default class {
         const folderPath = this.getMigrationFolderPath();
 
         const migrationsPaths = fs.readdirSync(folderPath)
-            .filter((file) => file.endsWith('.js'))
+            .filter((file) => file.match(/\^*(\.m?(js))$/))
             .map((file) => {
                 const versionId = file.split('.')[0];
 

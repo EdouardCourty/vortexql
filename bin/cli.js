@@ -21,11 +21,12 @@ program
 
 program
     .command('create')
-    .description('Creates a new migration')
-    .action(() => {
+    .description("Creates a new migration. [--mjs] option to use '.mjs' file extension.")
+    .addOption(new Option('--mjs', "use file extension '.mjs'"))
+    .action(({mjs}) => {
         Vortex.init();
 
-        Vortex.createNew();
+        Vortex.createNew(mjs);
         Vortex.finish();
     });
 

@@ -65,7 +65,7 @@ This table will store the history of the migrations, do not delete it.
 5 commands are available with the VortexQL CLI.
 
 - `init` will initialise VortexQL and create a default configuration file.
-- `create` will create a new migration.
+- `create` will create a new migration. _Use `--mjs` option for '.mjs' file extension._
 - `list` will display a list & status (played or not played) of all the existing migrations.
 - `migrate` will execute all the non-played migrations.
 - `revert <version>` will revert the database to the version passed as the first argument.
@@ -84,7 +84,7 @@ Options:
 
 Commands:
   migrate                     Migrates the database to the newest migration.
-  create                      Creates a new migration
+  create [options]            Creates a new migration. [--mjs] option to use '.mjs' file extension.
   revert [options] <version>  Reverts the database to the given migration ID's state
   list                        Shows a list of the migrations (played or not) and their description.
   init                        Creates a default configuration file.
