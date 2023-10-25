@@ -7,7 +7,7 @@ import Vortex from '../src/Vortex.js';
 program
     .name('vortex')
     .description('An SQL migration tool for Node.JS')
-    .version('1.0.0');
+    .version('1.1.0');
 
 program
     .command('migrate')
